@@ -13,8 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/tickets")
-@AllArgsConstructor
 public class TicketController {
+
+    public TicketController(TicketService ticketService) {
+        this.ticketService = ticketService;
+    }
 
     private final TicketService ticketService;
 
